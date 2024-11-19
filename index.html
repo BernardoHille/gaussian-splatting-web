@@ -27,7 +27,11 @@
 
 		import { LumaSplatsThree } from '@lumaai/luma-web';
 
+		import { VRButton } from "three/examples/jsm/webxr/VRButton.js";
+
 		let renderer = new WebGLRenderer({ antialias: false });
+
+		renderer.xr.enabled = true;
 
 		renderer.domElement.style.position = 'absolute';
 		renderer.domElement.style.width = '100%';
@@ -43,6 +47,10 @@
 		controls.enableDamping = true;
 
 		let scene = new Scene();
+
+		let vrButton = VRButton.createButton(renderer);
+
+		document.body.appendChild(vrButton);
 
 		let splat = new LumaSplatsThree({
 			source: 'https://lumalabs.ai/capture/d80d4876-cf71-4b8a-8b5b-49ffac44cd4a'
