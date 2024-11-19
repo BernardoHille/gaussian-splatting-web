@@ -31,7 +31,7 @@
 
 		let renderer = new WebGLRenderer({ antialias: false });
 
-		renderer.xr.enabled = true;
+		renderer.xr.enabled = false;
 
 		renderer.domElement.style.position = 'absolute';
 		renderer.domElement.style.width = '100%';
@@ -47,6 +47,8 @@
 		controls.enableDamping = true;
 
 		let scene = new Scene();
+
+		document.body.appendChild(vrButton);
 
 		let splat = new LumaSplatsThree({
 			source: 'https://lumalabs.ai/capture/d80d4876-cf71-4b8a-8b5b-49ffac44cd4a'
